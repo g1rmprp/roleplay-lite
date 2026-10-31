@@ -1,0 +1,11 @@
+node_modules/
+.env
+*.log
+*.zip
+build/
+tmp/
+serverconf.cfg
+server-listing.key
+rcon.key
+bans.json
+global-player-bans.cache.json
