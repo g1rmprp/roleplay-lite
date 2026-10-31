@@ -1,0 +1,13 @@
+{
+  "name": "g1rmp-roleplay-lite",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "description": "Standalone open-source roleplay starter for G1R:MP",
+  "scripts": {
+    "test": "node scripts/run-lua-test.mjs && node --test tests/manifest.test.mjs"
+  },
+  "devDependencies": {
+    "fengari-node-cli": "^0.1.0"
+  }
+}
