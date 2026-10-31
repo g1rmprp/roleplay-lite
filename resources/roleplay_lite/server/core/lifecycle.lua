@@ -33,12 +33,12 @@ addEventHandler("onPlayerLifeStateChange", root, function(playerId, previousStat
     end
 end)
 addEventHandler("onResourceStop", resourceRoot, function()
-    for _, session in pairs(players) do
+    for playerId, session in pairs(players) do
         clearMine(session)
         if session.spawnTimer then killTimer(session.spawnTimer) end
+        players[playerId] = nil
     end
     LITE_DB.close()
-    LITE.players = {}
     LITE.accessBySerial = {}
 end)
 

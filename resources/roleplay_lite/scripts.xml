@@ -7,6 +7,7 @@
     <script src="server/accounts/access.lua" type="server" />
     <script src="server/gameplay/mining.lua" type="server" />
     <script src="server/social/chat.lua" type="server" />
+    <script src="server/social/roleplay.lua" type="server" />
     <script src="server/admin/accounts.lua" type="server" />
     <script src="server/core/commands.lua" type="server" />
     <script src="server/core/lifecycle.lua" type="server" />

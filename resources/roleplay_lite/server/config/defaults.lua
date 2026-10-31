@@ -10,5 +10,9 @@ LITE_CONFIG = {
         minimumWaitMs = 1600, randomWaitMs = 1800, hitWindowMs = 1400, cooldownMs = 5000 },
     chatRange = 20,
     actionRange = 20,
+    whisperRange = 4,
+    shoutRange = 40,
+    lookRange = 5,
+    socialCooldownMs = 1000,
     maxChatBytes = 180
 }

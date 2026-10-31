@@ -75,7 +75,28 @@ local function distanceSquared(a, b)
     local ax, ay, az = tonumber(a.x), tonumber(a.y), tonumber(a.z)
     local bx, by, bz = tonumber(b.x), tonumber(b.y), tonumber(b.z)
     if not ax or not ay or not az or not bx or not by or not bz then return math.huge end
+    for _, value in ipairs({ ax, ay, az, bx, by, bz }) do
+        if value ~= value or value == math.huge or value == -math.huge then return math.huge end
+    end
     return (ax-bx)^2 + (ay-by)^2 + (az-bz)^2
+end
+
+-- Chat commands accept decimal integers, never expressions, NaN or infinity.
+local function integer(value, minimum, maximum)
+    if type(value) == "string" then
+        if #value > 10 or not value:match("^%d+$") then return nil end
+        value = tonumber(value)
+    end
+    if type(value) ~= "number" or value ~= value or value == math.huge or value == -math.huge or
+        value ~= math.floor(value) or value < minimum or value > maximum then return nil end
+    return value
+end
+
+local function socialReady(session)
+    local now = getTickCount()
+    if session.nextSocialAt and now < session.nextSocialAt then return false end
+    session.nextSocialAt = now + LITE_CONFIG.socialCooldownMs
+    return true
 end
 
 local function alive(playerId)
@@ -94,3 +115,5 @@ LITE.query = query
 LITE.validSession = validSession
 LITE.distanceSquared = distanceSquared
 LITE.alive = alive
+LITE.integer = integer
+LITE.socialReady = socialReady

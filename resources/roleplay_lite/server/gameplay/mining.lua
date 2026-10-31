@@ -128,3 +128,8 @@ addCommandHandler("hit", function(playerId)
     local session = validSession(playerId)
     if session and session.mine then hitMine(playerId, session.mine.token) end
 end)
+
+addCommandHandler("cancelmine", function(playerId)
+    local session = validSession(playerId)
+    if session then finishMine(playerId, session, "Mining cancelled.") end
+end)

@@ -2,7 +2,8 @@ local recent = {}
 local allowed = {
     me = true, ["do"] = true, ooc = true, inventory = true, mine = true,
     hit = true, rphelp = true, serial = true, describe = true,
-    approveaccount = true
+    approveaccount = true, players = true, look = true, whisper = true,
+    shout = true, roll = true, cancelmine = true
 }
 
 addEvent("lite:chat:submit", true)

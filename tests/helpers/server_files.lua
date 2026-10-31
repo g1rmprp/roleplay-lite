@@ -6,6 +6,7 @@ return {
     "server/accounts/access.lua",
     "server/gameplay/mining.lua",
     "server/social/chat.lua",
+    "server/social/roleplay.lua",
     "server/admin/accounts.lua",
     "server/core/commands.lua",
     "server/core/lifecycle.lua",

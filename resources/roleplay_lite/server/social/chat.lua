@@ -6,6 +6,7 @@ local function localChat(playerId, prefix, message, range)
     message = trim(message)
     if not sender then send(playerId, "Please log in first.") return end
     if not safeText(message, 1, LITE_CONFIG.maxChatBytes) then return end
+    if not LITE.socialReady(sender) then return end
     local position = getPlayerPosition(playerId)
     if not position then return end
     for _, targetId in ipairs(getPlayers() or {}) do
@@ -34,6 +35,7 @@ addCommandHandler("ooc", function(playerId, commandName, ...)
     local session = validSession(playerId)
     local message = trim(table.concat({...}, " "))
     if not session or not safeText(message, 1, LITE_CONFIG.maxChatBytes) then return end
+    if not LITE.socialReady(session) then return end
     for _, targetId in ipairs(getPlayers() or {}) do
         if validSession(targetId) then send(targetId, "(( " .. session.name .. ": " .. message .. " ))") end
     end

@@ -21,12 +21,23 @@ The password is entered in the access window. Do not send passwords as chat comm
 | --- | --- |
 | `/rphelp` | Show the short command list |
 | `/inventory` | Show the pickaxe and ore balance |
-| `/mine`, `/hit` | Start the minigame and strike during the opening |
+| `/mine`, `/hit`, `/cancelmine` | Start mining, strike during the opening or cancel |
+| `/players` | List active character IDs and names |
+| `/look ID` | Read a nearby character's description |
 | `/me`, `/do` | Send nearby RP actions |
+| `/whisper ID TEXT` | Send a private message to a nearby character |
+| `/shout TEXT` | Speak across a larger local range |
+| `/roll [SIDES]` | Roll a server-generated die locally; 2-1000 sides, default 100 |
 | `/ooc` | Send an OOC message to logged-in players |
 | `/describe TEXT` | Save the character description |
 | `/serial` | Show your game serial for local admin setup |
 | `/approveaccount NAME` | Approve a pending account with admin permission |
+
+Default ranges are 20 metres for speech and actions, 4 for whispers, 40 for
+shouts and 5 for character inspection. `/look` checks proximity, not line of
+sight. A whisper is sent only to its sender and recipient; `/ooc` is global to
+logged-in characters. Social actions share a one-second cooldown. Ranges and
+the cooldown are configurable in `server/config/defaults.lua`.
 
 ## Development and scope
 
