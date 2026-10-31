@@ -1,5 +1,5 @@
 <rml>
-<head><title>Roleplay Lite Access</title><link type="text/rcss" href="lite.rcss" /></head>
+<head><title>Roleplay Lite Access</title><link type="text/rcss" href="../styles/lite.rcss" /></head>
 <body>
 <div id="panel">
     <h1>Roleplay Lite</h1>

@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <scripts>
-    <script src="server/config.lua" type="server" />
-    <script src="server/database.lua" type="server" />
-    <script src="server/main.lua" type="server" />
+    <script src="server/config/defaults.lua" type="server" />
+    <script src="server/core/state.lua" type="server" />
+    <script src="server/core/database.lua" type="server" />
+    <script src="server/characters/characters.lua" type="server" />
+    <script src="server/accounts/access.lua" type="server" />
+    <script src="server/gameplay/mining.lua" type="server" />
+    <script src="server/social/chat.lua" type="server" />
+    <script src="server/admin/accounts.lua" type="server" />
+    <script src="server/core/commands.lua" type="server" />
+    <script src="server/core/lifecycle.lua" type="server" />
     <script src="client/ui.lua" type="client" cache="true" />
-    <file src="ui/access.rml" download="join" />
-    <file src="ui/mine.rml" download="join" />
-    <file src="ui/lite.rcss" download="join" />
+    <file src="ui/screens/access.rml" download="join" />
+    <file src="ui/screens/mine.rml" download="join" />
+    <file src="ui/styles/lite.rcss" download="join" />
 </scripts>

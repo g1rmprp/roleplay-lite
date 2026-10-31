@@ -12,8 +12,8 @@ local function emit(name, ...)
     for _, callback in ipairs(handlers[name] or {}) do callback(...) end
 end
 function guiLoadDocument(path)
-    if path == "ui/access.rml" then return "access" end
-    if path == "ui/mine.rml" then return "mine" end
+    if path == "ui/screens/access.rml" then return "access" end
+    if path == "ui/screens/mine.rml" then return "mine" end
     return false
 end
 function guiSetClass() return true end

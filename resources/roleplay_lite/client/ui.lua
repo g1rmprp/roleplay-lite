@@ -50,7 +50,7 @@ local function setText(document, id, value)
 end
 
 addEventHandler("onClientResourceStart", resourceRoot, function()
-    accessDocument = guiLoadDocument("ui/access.rml")
+    accessDocument = guiLoadDocument("ui/screens/access.rml")
     if not accessDocument then
         outputDebugString("[Roleplay Lite] Access document is missing.", 1)
         return
@@ -85,7 +85,7 @@ addEventHandler("lite:mine", root, function(action, token, message)
         return
     end
     if action == "start" then
-        mineDocument = mineDocument or guiLoadDocument("ui/mine.rml")
+        mineDocument = mineDocument or guiLoadDocument("ui/screens/mine.rml")
         if not mineDocument then
             outputDebugString("[Roleplay Lite] Mining window is missing; /hit remains available.", 1)
             return

@@ -1,13 +1,11 @@
 local rootPath = "resources/roleplay_lite/"
 local unpackValues = (table and table.unpack) or unpack
-for _, file in ipairs({
-    "resources/roleplay_lite/server/config.lua",
-    "resources/roleplay_lite/server/database.lua",
-    "resources/roleplay_lite/server/main.lua",
-    "resources/roleplay_lite/client/ui.lua",
-    "resources/chat/server.lua",
-    "resources/chat/client.lua"
-}) do
+local serverFiles = dofile("tests/helpers/server_files.lua")
+for _, file in ipairs(serverFiles) do
+    local chunk, problem = loadfile(rootPath .. file)
+    assert(chunk, problem)
+end
+for _, file in ipairs({ rootPath .. "client/ui.lua", "resources/chat/server.lua", "resources/chat/client.lua" }) do
     local chunk, problem = loadfile(file)
     assert(chunk, problem)
 end
@@ -116,9 +114,7 @@ local function fire(timer)
     timer.callback(unpackValues(timer.args))
 end
 
-dofile(rootPath .. "server/config.lua")
-dofile(rootPath .. "server/database.lua")
-dofile(rootPath .. "server/main.lua")
+for _, file in ipairs(serverFiles) do dofile(rootPath .. file) end
 emit("onResourceStart")
 emit("onPlayerJoin", 1)
 

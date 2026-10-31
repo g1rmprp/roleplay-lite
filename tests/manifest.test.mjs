@@ -44,12 +44,19 @@ test('both resources include all files and unique UI IDs', () => {
 test('validator catches missing assets, manifest entries and duplicate IDs', () => {
   const root = path.join(project, 'resources', 'roleplay_lite');
   const manifest = fs.readFileSync(path.join(root, 'scripts.xml'), 'utf8');
-  const badManifest = manifest.replace('<file src="ui/lite.rcss" download="join" />', '');
-  const badRml = '<rml><head><link href="lite.rcss" /></head><body><div id="x" /><p id="x" /></body></rml>';
+  const badManifest = manifest.replace('<file src="ui/styles/lite.rcss" download="join" />', '');
+  const badRml = '<rml><head><link href="../styles/lite.rcss" /></head><body><div id="x" /><p id="x" /></body></rml>';
   const errors = validateResource(root,
     (file) => file.endsWith('scripts.xml') ? badManifest : file.endsWith('access.rml') ? badRml : fs.readFileSync(file, 'utf8'),
     (file) => file.endsWith('mine.rml') ? false : fs.existsSync(file));
   assert(errors.some((value) => value.includes('Asset not in manifest')));
   assert(errors.some((value) => value.includes('Duplicate RML ID')));
   assert(errors.some((value) => value.includes('Missing file')));
+});
+
+test('server test loader matches the resource load order', () => {
+  const manifest = fs.readFileSync(path.join(project, 'resources/roleplay_lite/scripts.xml'), 'utf8');
+  const files = [...manifest.matchAll(/<script src="([^"]+)" type="server"/g)].map((match) => match[1]);
+  const loader = fs.readFileSync(path.join(project, 'tests/helpers/server_files.lua'), 'utf8');
+  assert.deepEqual([...loader.matchAll(/"([^"]+)"/g)].map((match) => match[1]), files);
 });
