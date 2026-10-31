@@ -1,0 +1,5 @@
+body { width: 100%; height: 100%; }
+#chat-shell { position: absolute; left: 24dp; bottom: 24dp; width: 560dp; color: #f2eee5; }
+#messages { width: 560dp; height: 210dp; overflow-y: auto; background-color: #181511; }
+#composer { width: 560dp; margin-top: 4dp; }
+#message { width: 540dp; padding: 8dp; background-color: #241e18; color: #ffffff; border: 1dp #6c583a; }

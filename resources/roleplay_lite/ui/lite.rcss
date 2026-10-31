@@ -1,0 +1,8 @@
+body { width: 100%; height: 100%; color: #e7ddc8; }
+#panel { width: 440dp; margin: 120dp auto 0 auto; padding: 24dp; background-color: #201d1a; border: 1dp #6c583a; }
+h1 { color: #d9b67b; font-size: 28dp; margin-bottom: 12dp; }
+p { margin-bottom: 16dp; }
+label { display: block; margin-top: 8dp; }
+input { display: block; width: 390dp; padding: 8dp; background-color: #342e28; color: #ffffff; }
+button { display: block; margin-top: 12dp; padding: 10dp; background-color: #6c583a; color: #ffffff; }
+.hidden { display: none; }

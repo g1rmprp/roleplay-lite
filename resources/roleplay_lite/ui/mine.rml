@@ -1,0 +1,11 @@
+<rml>
+<head><title>Roleplay Lite Mining</title><link type="text/rcss" href="lite.rcss" /></head>
+<body>
+<div id="panel">
+    <h1>Mining</h1>
+    <p id="mine-status">Watch the ore vein...</p>
+    <button id="hit">Strike!</button>
+    <button id="cancel">Cancel</button>
+</div>
+</body>
+</rml>

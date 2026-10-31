@@ -1,0 +1,18 @@
+<rml>
+<head><title>Roleplay Lite Access</title><link type="text/rcss" href="lite.rcss" /></head>
+<body>
+<div id="panel">
+    <h1>Roleplay Lite</h1>
+    <p id="status">Connecting to the server...</p>
+    <div id="account-fields">
+        <label>Username</label><input id="username" type="text" maxlength="24" />
+        <label>Password</label><input id="password" type="password" maxlength="72" />
+        <button id="login">Log in</button><button id="register">Register</button>
+    </div>
+    <div id="character-fields">
+        <label>Character name</label><input id="character-name" type="text" maxlength="48" />
+        <button id="create-character">Create character</button>
+    </div>
+</div>
+</body>
+</rml>

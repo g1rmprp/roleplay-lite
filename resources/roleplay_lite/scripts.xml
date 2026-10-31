@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<scripts>
+    <script src="server/config.lua" type="server" />
+    <script src="server/database.lua" type="server" />
+    <script src="server/main.lua" type="server" />
+    <script src="client/ui.lua" type="client" cache="true" />
+    <file src="ui/access.rml" download="join" />
+    <file src="ui/mine.rml" download="join" />
+    <file src="ui/lite.rcss" download="join" />
+</scripts>

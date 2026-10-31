@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<scripts>
+    <script src="server.lua" type="server" />
+    <script src="client.lua" type="client" cache="true" />
+    <file src="ui/chat.rml" download="join" />
+    <file src="ui/chat.rcss" download="join" />
+</scripts>

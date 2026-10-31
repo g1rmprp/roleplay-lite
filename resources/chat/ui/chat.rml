@@ -1,0 +1,9 @@
+<rml>
+<head><title>Roleplay Lite Chat</title><link type="text/rcss" href="chat.rcss" /></head>
+<body>
+<div id="chat-shell">
+    <div id="messages"></div>
+    <form id="composer"><input id="message" name="message" type="text" maxlength="180" placeholder="Message or /command..." /></form>
+</div>
+</body>
+</rml>
